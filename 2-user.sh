@@ -18,7 +18,7 @@ cd ${HOME}/yay
 makepkg -si --noconfirm
 cd ~
 touch "$HOME/.cache/zshhistory"
-git clone "https://github.com/ChrisTitusTech/zsh"
+git clone "https://github.com/iNatie/zsh"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/powerlevel10k
 ln -s "$HOME/zsh/.zshrc" $HOME/.zshrc
 
