@@ -23,6 +23,9 @@ cd ${HOME}/snapd
 makepkg -si --noconfirm
 sudo systemctl enable --now snapd.socket
 sudo systemctl daemon-reexec
+sleep 5
+sudo snap install spotify
+sleep 10
 cd ~
 touch "$HOME/.cache/zshhistory"
 git clone "https://github.com/iNatie/zsh"
@@ -60,7 +63,6 @@ PKGS=(
 'zsh-autosuggestions'
 )
 
-sudo snap install spotify
 for PKG in "${PKGS[@]}"; do
     yay -S --noconfirm $PKG
 done
