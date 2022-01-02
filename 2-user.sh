@@ -127,8 +127,6 @@ PKGS=(
 'ttf-roboto'
 'zoom' # video conferences
 'snap-pac'
-'zsh-syntax-highlighting'
-'zsh-autosuggestions'
 )
 
 for PKG in "${PKGS[@]}"; do
