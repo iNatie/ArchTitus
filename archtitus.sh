@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
     bash 0-preinstall.sh
     arch-chroot /mnt /root/ArchTitus/1-setup.sh
