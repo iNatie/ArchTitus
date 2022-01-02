@@ -16,6 +16,13 @@ cd ~
 git clone "https://aur.archlinux.org/yay.git"
 cd ${HOME}/yay
 makepkg -si --noconfirm
+echo "CLONING: SNAPD"
+cd ~
+git clone "https://aur.archlinux.org/snapd.git"
+cd ${HOME}/snapd
+makepkg -si --noconfirm
+sudo systemctl enable --now snapd.socket
+sudo systemctl daemon-reexec
 cd ~
 touch "$HOME/.cache/zshhistory"
 git clone "https://github.com/iNatie/zsh"
@@ -53,6 +60,7 @@ PKGS=(
 'zsh-autosuggestions'
 )
 
+sudo snap install spotify
 for PKG in "${PKGS[@]}"; do
     yay -S --noconfirm $PKG
 done
