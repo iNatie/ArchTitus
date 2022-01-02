@@ -1,6 +1,0 @@
-What to do next
-
-1. fix snapper to create snapshots
-2. install spotify
-3. install GloriousEggroll - Proton
-4. install firefox instead of brave
