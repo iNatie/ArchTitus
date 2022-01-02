@@ -57,14 +57,6 @@ for PKG in "${PKGS[@]}"; do
     yay -S --noconfirm $PKG
 done
 
-SNAPS=(
-'spotify'
-)
-
-for PKG in "${SNAPS[@]}"; do
-    snap install $PKG
-done
-
 export PATH=$PATH:~/.local/bin
 cp -r $HOME/ArchTitus/dotfiles/* $HOME/.config/
 pip install konsave

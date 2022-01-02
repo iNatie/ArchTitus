@@ -44,10 +44,10 @@ localectl --no-ask-password set-keymap us
 # Add sudo no password rights
 sed -i 's/^# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
 
-# Add parallel downloading
+#Add parallel downloading
 sed -i 's/^#Para/Para/' /etc/pacman.conf
 
-# Enable multilib
+#Enable multilib
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 pacman -Sy --noconfirm
 
@@ -88,7 +88,6 @@ PKGS=(
 'cronie'
 'cups'
 'dialog'
-'discord'
 'discover'
 'dolphin'
 'dosfstools'
@@ -173,7 +172,6 @@ PKGS=(
 'rsync'
 'sddm'
 'sddm-kcm'
-'snapd'
 'snapper'
 'spectacle'
 'steam'
@@ -237,11 +235,6 @@ elif lspci | grep -E "Integrated Graphics Controller"; then
 fi
 
 echo -e "\nDone!\n"
-
-# Enable snap stuff
-systemctl enable --now snapd.socket
-ln -s /var/lib/snapd/snap /snap
-
 if ! source install.conf; then
 	read -p "Please enter username:" username
 

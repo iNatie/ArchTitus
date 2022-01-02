@@ -38,10 +38,6 @@ systemctl disable dhcpcd.service
 systemctl stop dhcpcd.service
 systemctl enable NetworkManager.service
 systemctl enable bluetooth
-systemctl enable snapper-timeline.timer
-systemctl start snapper-timeline.timer
-systemctl enable snapper-cleanup.timer
-systemctl start snapper-cleanup.timer
 echo "
 ###############################################################################
 # Cleaning
@@ -54,15 +50,6 @@ sed -i 's/^# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 
 # Replace in the same state
 cd $pwd
-echo "
-###############################################################################
-# Snapper Snapshots
-###############################################################################
-"
-# Create Snapper config for root, with auto timeline
-snapper -c root create-config /
-# Make a base Snapper snapshot
-snapper -c root create --description A base snapshot of Root
 echo "
 ###############################################################################
 # Done - Please Eject Install Media and Reboot
