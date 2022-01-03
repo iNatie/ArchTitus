@@ -17,6 +17,16 @@ git clone "https://aur.archlinux.org/yay.git"
 cd ${HOME}/yay
 makepkg -si --noconfirm
 
+# Install Snap
+echo "CLONING: SNAP & INSTALLING: SPOTIFY"
+cd ~
+git clone "https://aur.archlinux.org/snapd.git"
+cd ${HOME}/snapd
+sleep 5
+makepkg -si --noconfirm
+sleep 5
+cd ~
+
 touch "$HOME/.cache/zshhistory"
 git clone "https://github.com/iNatie/zsh"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/powerlevel10k

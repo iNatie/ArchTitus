@@ -29,15 +29,7 @@ EOF
 
 # ------------------------------------------------------------------------
 
-# Install Snap & Spotify
-echo "CLONING: SNAP & INSTALLING: SPOTIFY"
-cd ~
-git clone "https://aur.archlinux.org/snapd.git"
-cd ${HOME}/snapd
-sleep 5
-makepkg -si --noconfirm
-sleep 5
-cd ~
+# INSTALLING SPOTIFY SNAP
 sudo systemctl enable --now snapd.socket
 sleep 5
 sudo systemctl daemon-reload
