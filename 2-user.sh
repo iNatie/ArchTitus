@@ -16,16 +16,36 @@ cd ~
 git clone "https://aur.archlinux.org/yay.git"
 cd ${HOME}/yay
 makepkg -si --noconfirm
-echo "CLONING: SPOTIFY"
+echo "CLONING: SNAP & INSTALLING: SPOTIFY"
 cd ~
-git clone "https://aur.archlinux.org/spotify.git"
-cd ${HOME}/spotify
+git clone "https://aur.archlinux.org/snapd.git"
+cd ${HOME}/snapd
+sleep 5
 makepkg -si --noconfirm
+sleep 5
 cd ~
+sudo systemctl enable --now snapd.socket
+sleep 5
+sudo systemctl daemon-reload
+sleep 5
+sudo systemctl restart snapd.seeded.service
+sleep 5
+sudo snap install spotify
+sleep 5
+
 touch "$HOME/.cache/zshhistory"
 git clone "https://github.com/iNatie/zsh"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/powerlevel10k
 ln -s "$HOME/zsh/.zshrc" $HOME/.zshrc
+
+DOWNLOAD_URL=$(curl -s https://api.github.com/repos/GloriousEggroll/proton-ge-custom/releases/latest \
+        | grep browser_download_url \
+        | grep "Proton(.*)tar.gz$" \
+        | cut -d '"' -f 4)
+curl -s -L --create-dirs -o "${HOME}/.steam/root/compatibilitytools.d" "$DOWNLOAD_URL"
+cd "${HOME}/.steam/root/compatibilitytools.d"
+TAR_GZ=$(echo $DOWNLOAD_URL | rev | cut -d '/' -f 1 | rev)
+tar -xf $TAR_GZ -C "${HOME}/.steam/root/compatibilitytools.d"
 
 PKGS=(
 'qt5-multimedia' # dep for mkvtoolnix
