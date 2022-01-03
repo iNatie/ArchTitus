@@ -66,7 +66,14 @@ PKGS=(
 'alsa-plugins' # audio plugins
 'alsa-utils' # audio utils
 'ark' # compression
+'abcde' # CD ripper
 'audiocd-kio' 
+'arduino-avr-core'
+'arduino-builder'
+'arduino-cli'
+'arduino-docs'
+'arduino'
+'audacity'
 'autoconf' # build
 'automake' # build
 'base'
@@ -83,10 +90,14 @@ PKGS=(
 'bridge-utils'
 'btrfs-progs'
 'celluloid' # video players
+'chromium'
 'cmatrix'
 'code' # Visual Studio code
 'cronie'
 'cups'
+'cura'
+'deja-dup'
+'deluge'
 'dialog'
 'discord'
 'discover'
@@ -97,7 +108,9 @@ PKGS=(
 'egl-wayland'
 'exfat-utils'
 'extra-cmake-modules'
+'ffmpeg'
 'filelight'
+'filezilla'
 'firefox'
 'flex'
 'fuse2'
@@ -109,12 +122,14 @@ PKGS=(
 'git'
 'gparted' # partition management
 'gptfdisk'
+'gpsbabel'
 'grub'
 'grub-customizer'
 'gst-libav'
 'gst-plugins-good'
 'gst-plugins-ugly'
 'gwenview'
+'handbrake'
 'haveged'
 'htop'
 'iptables-nft'
@@ -124,12 +139,14 @@ PKGS=(
 'kcoreaddons'
 'kdeplasma-addons'
 'kde-gtk-config'
+'kid3'
 'kinfocenter'
 'kscreen'
 'kvantum-qt5'
 'kitty'
 'konsole'
 'kscreen'
+'lame'
 'layer-shell-qt'
 'libdvdcss'
 'libnewt'
@@ -143,12 +160,17 @@ PKGS=(
 'm4'
 'make'
 'milou'
+'mkvtoolnix-gui'
+'mkvtoolnix-cli'
+'mp3info'
+'mysql-workbench'
 'nano'
 'nautilus'
 'neofetch'
 'networkmanager'
 'ntfs-3g'
 'ntp'
+'obs-studio'
 'okular'
 'openbsd-netcat'
 'openssh'
@@ -157,6 +179,7 @@ PKGS=(
 'p7zip'
 'pacman-contrib'
 'patch'
+'picard'
 'picom'
 'pkgconf'
 'plasma-meta'
@@ -191,13 +214,23 @@ PKGS=(
 'vim'
 'virt-manager'
 'virt-viewer'
+'vlc'
 'wget'
 'which'
 'wine-gecko'
 'wine-mono'
 'winetricks'
+'wireshark-cli'
+'wireshark-qt'
 'xdg-desktop-portal-kde'
 'xdg-user-dirs'
+'yt-dlp'
+'yubico-pam'
+'yubikey-manager-qt'
+'yubikey-manager'
+'yubikey-personalization-gui'
+'yubikey-touch-detecter'
+'yubikey-personalization'
 'zeroconf-ioslave'
 'zip'
 'zsh'
@@ -206,8 +239,8 @@ PKGS=(
 )
 
 for PKG in "${PKGS[@]}"; do
-    echo "INSTALLING: ${PKG}"
-    sudo pacman -S "$PKG" --noconfirm --needed
+    echo "INSTALLING: ${PKG}" | tee -a pacman.txt
+    sudo pacman -S "$PKG" --noconfirm --needed | tee -a pacman.txt
 done
 
 #
