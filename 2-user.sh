@@ -16,42 +16,11 @@ cd ~
 git clone "https://aur.archlinux.org/yay.git"
 cd ${HOME}/yay
 makepkg -si --noconfirm
-# Install Snap & Spotify
-echo "CLONING: SNAP & INSTALLING: SPOTIFY"
-cd ~
-git clone "https://aur.archlinux.org/snapd.git"
-cd ${HOME}/snapd
-sleep 5
-makepkg -si --noconfirm
-sleep 5
-cd ~
-sudo systemctl enable --now snapd.socket
-sleep 5
-sudo systemctl daemon-reload
-sleep 5
-sudo systemctl restart snapd.seeded.service
-sleep 5
-sudo snap install spotify
-sleep 5
 
 touch "$HOME/.cache/zshhistory"
 git clone "https://github.com/iNatie/zsh"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/powerlevel10k
 ln -s "$HOME/zsh/.zshrc" $HOME/.zshrc
-
-# Install GE Proton
-DOWNLOAD_URL=$(curl -s https://api.github.com/repos/GloriousEggroll/proton-ge-custom/releases/latest \
-        | grep browser_download_url \
-        | grep Proton \
-        | grep tar.gz \
-        | cut -d '"' -f 4)
-DOWNLOAD_FILE=$(echo "$DOWNLOAD_URL" | rev | cut -d '/' -f1 | rev)
-DOWNLOAD_URL_CUT=$(echo "$DOWNLOAD_URL" | rev | cut -d '/' -f2- | rev)
-DOWNLOAD_URL="$DOWNLOAD_URL_CUT/{$DOWNLOAD_FILE}"
-mkdir "${HOME}/.steam/root/compatibilitytools.d"
-cd "${HOME}/.steam/root/compatibilitytools.d"
-curl -s -L "$DOWNLOAD_URL" -o '#1'
-tar -xf $DOWNLOAD_FILE
 
 PKGS=(
 'qt5-multimedia' # dep for mkvtoolnix
