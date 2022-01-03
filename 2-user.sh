@@ -50,8 +50,8 @@ DOWNLOAD_URL_CUT=$(echo "$DOWNLOAD_URL" | rev | cut -d '/' -f2- | rev)
 DOWNLOAD_URL="$DOWNLOAD_URL_CUT/{$DOWNLOAD_FILE}"
 mkdir "${HOME}/.steam/root/compatibilitytools.d"
 cd "${HOME}/.steam/root/compatibilitytools.d"
-curl -s -L"$DOWNLOAD_URL" -o '#1'
-tar -xf $DOWNLOAD_FILE -C "${HOME}/.steam/root/compatibilitytools.d"
+curl -s -L "$DOWNLOAD_URL" -o '#1'
+tar -xf $DOWNLOAD_FILE
 
 PKGS=(
 'qt5-multimedia' # dep for mkvtoolnix

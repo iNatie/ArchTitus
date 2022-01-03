@@ -2,6 +2,8 @@
 
 <img src="https://i.imgur.com/YiNMnan.png" />
 
+## Modified to add all the programs I use (Including the Snap pack of Spotify (to avoid GPG key issues) and [the latest release of GE Proton](https://github.com/GloriousEggroll/proton-ge-custom))
+
 This README contains the steps I do to install and configure a fully-functional Arch Linux installation containing a desktop environment, all the support packages (network, bluetooth, audio, printers, etc.), along with all my preferred applications and utilities. The shell scripts in this repo allow the entire process to be automated.)
 
 ---
@@ -9,7 +11,6 @@ This README contains the steps I do to install and configure a fully-functional 
 
 Download ArchISO from <https://archlinux.org/download/> and put on a USB drive with [Etcher](https://www.balena.io/etcher/), [Ventoy](https://www.ventoy.net/en/index.html), or [Rufus](https://rufus.ie/en/)
 
-If you don't want to build using this script I did create an image @ <https://www.christitus.com/arch-titus>
 
 ## Boot Arch ISO
 
@@ -17,7 +18,7 @@ From initial Prompt type the following commands:
 
 ```
 pacman -Sy git
-git clone https://github.com/ChrisTitusTech/ArchTitus
+git clone https://github.com/iNatie/ArchTitus
 cd ArchTitus
 ./archtitus.sh
 ```
