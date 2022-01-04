@@ -29,16 +29,6 @@ EOF
 
 # ------------------------------------------------------------------------
 
-echo "INSTALLING SPOTIFY SNAP"
-sudo systemctl enable --now snapd.socket
-sleep 5
-sudo systemctl daemon-reload
-sleep 5
-sudo systemctl restart snapd.seeded.service
-sleep 5
-sudo snap install spotify
-sleep 5
-
 echo "Install GE Proton"
 DOWNLOAD_URL=$(curl -s https://api.github.com/repos/GloriousEggroll/proton-ge-custom/releases/latest \
         | grep browser_download_url \
@@ -48,8 +38,8 @@ DOWNLOAD_URL=$(curl -s https://api.github.com/repos/GloriousEggroll/proton-ge-cu
 DOWNLOAD_FILE=$(echo "$DOWNLOAD_URL" | rev | cut -d '/' -f1 | rev)
 DOWNLOAD_URL_CUT=$(echo "$DOWNLOAD_URL" | rev | cut -d '/' -f2- | rev)
 DOWNLOAD_URL="$DOWNLOAD_URL_CUT/{$DOWNLOAD_FILE}"
-mkdir "~/.steam/root/compatibilitytools.d"
-cd "~/.steam/root/compatibilitytools.d"
+mkdir "~/.local/share/Steam/compatibilitytools.d"
+cd "~/.local/share/Steam/compatibilitytools.d"
 curl -s -L "$DOWNLOAD_URL" -o '#1'
 tar -xf $DOWNLOAD_FILE
 

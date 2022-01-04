@@ -129,3 +129,13 @@ konsave -a kde
 
 echo -e "\nDone!\n"
 exit
+
+echo "INSTALLING SPOTIFY SNAP"
+sudo systemctl enable --now snapd.socket
+sleep 5
+sudo systemctl daemon-reload
+sleep 5
+sudo systemctl restart snapd.seeded.service
+sleep 5
+sudo snap install spotify
+sleep 5
