@@ -39,9 +39,9 @@ DOWNLOAD_FILE=$(echo "$DOWNLOAD_URL" | rev | cut -d '/' -f1 | rev)
 DOWNLOAD_URL_CUT=$(echo "$DOWNLOAD_URL" | rev | cut -d '/' -f2- | rev)
 DOWNLOAD_URL="$DOWNLOAD_URL_CUT/{$DOWNLOAD_FILE}"
 read -p "Press any key to resume ..."
-mkdir "~/.local/share/Steam/compatibilitytools.d"
+mkdir "$HOME/.local/share/Steam/compatibilitytools.d"
 read -p "Press any key to resume ..."
-cd "~/.local/share/Steam/compatibilitytools.d"
+cd "$HOME/.local/share/Steam/compatibilitytools.d"
 read -p "Press any key to resume ..."
 curl -s -L "$DOWNLOAD_URL" -o '#1'
 read -p "Press any key to resume ..."

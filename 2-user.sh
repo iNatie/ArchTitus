@@ -27,6 +27,27 @@ makepkg -si --noconfirm
 sleep 5
 cd ~
 
+echo -e "# Final snapd setup and Install Spotify\n" >> "$HOME/final-setup.sh"
+echo -e "sudo systemctl enable --now snapd.socket\n" >> "$HOME/final-setup.sh"
+echo -e "sudo systemctl daemon-reload\n" >> "$HOME/final-setup.sh"
+echo -e "sudo systemctl restart snapd.seeded.service\n" >> "$HOME/final-setup.sh"
+echo -e "sudo snap install spotify\n\n" >> "$HOME/final-setup.sh"
+
+echo -e "# Proton install\n" >> "$HOME/final-setup.sh"
+echo -e "steam\n" >> "$HOME/final-setup.sh"
+echo -e 'DOWNLOAD_URL=$(curl -s https://api.github.com/repos/GloriousEggroll/proton-ge-custom/releases/latest \
+        | grep browser_download_url \
+        | grep Proton \
+        | grep tar.gz \
+        | cut -d ''"'' -f 4)\n' >> "$HOME/final-setup.sh"
+echo -e 'DOWNLOAD_FILE=$(echo "$DOWNLOAD_URL" | rev | cut -d ''/'' -f1 | rev)\n' >> "$HOME/final-setup.sh"
+echo -e 'DOWNLOAD_URL_CUT=$(echo "$DOWNLOAD_URL" | rev | cut -d ''/'' -f2- | rev)\n' >> "$HOME/final-setup.sh"
+echo -e 'DOWNLOAD_URL="$DOWNLOAD_URL_CUT/{$DOWNLOAD_FILE}"\n' >> "$HOME/final-setup.sh"
+echo -e 'mkdir "~/.local/share/Steam/compatibilitytools.d"\n' >> "$HOME/final-setup.sh"
+echo -e 'cd "$HOME/.local/share/Steam/compatibilitytools.d"\n' >> "$HOME/final-setup.sh"
+echo -e 'curl -s -L "$DOWNLOAD_URL" -o "#1"\n' >> "$HOME/final-setup.sh"
+echo -e 'tar -xf "$DOWNLOAD_FILE"\n' >> "$HOME/final-setup.sh"
+
 touch "$HOME/.cache/zshhistory"
 git clone "https://github.com/iNatie/zsh"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/powerlevel10k
