@@ -288,6 +288,7 @@ for PKG in "${PKGS[@]}"; do
     echo "INSTALLING: ${PKG}" | tee -a pacman.txt
     sudo pacman -S "$PKG" --noconfirm --needed | tee -a pacman.txt
 done
+steam
 
 #
 # determine processor type and install microcode
