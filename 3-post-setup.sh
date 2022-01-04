@@ -38,10 +38,15 @@ DOWNLOAD_URL=$(curl -s https://api.github.com/repos/GloriousEggroll/proton-ge-cu
 DOWNLOAD_FILE=$(echo "$DOWNLOAD_URL" | rev | cut -d '/' -f1 | rev)
 DOWNLOAD_URL_CUT=$(echo "$DOWNLOAD_URL" | rev | cut -d '/' -f2- | rev)
 DOWNLOAD_URL="$DOWNLOAD_URL_CUT/{$DOWNLOAD_FILE}"
+read -p "Press any key to resume ..."
 mkdir "~/.local/share/Steam/compatibilitytools.d"
+read -p "Press any key to resume ..."
 cd "~/.local/share/Steam/compatibilitytools.d"
+read -p "Press any key to resume ..."
 curl -s -L "$DOWNLOAD_URL" -o '#1'
+read -p "Press any key to resume ..."
 tar -xf $DOWNLOAD_FILE
+read -p "Press any key to resume ..."
 
 echo -e "\nEnabling essential services"
 
