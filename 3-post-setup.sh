@@ -29,7 +29,7 @@ EOF
 
 # ------------------------------------------------------------------------
 
-# INSTALLING SPOTIFY SNAP
+echo "INSTALLING SPOTIFY SNAP"
 sudo systemctl enable --now snapd.socket
 sleep 5
 sudo systemctl daemon-reload
@@ -39,7 +39,7 @@ sleep 5
 sudo snap install spotify
 sleep 5
 
-# Install GE Proton
+echo "Install GE Proton"
 DOWNLOAD_URL=$(curl -s https://api.github.com/repos/GloriousEggroll/proton-ge-custom/releases/latest \
         | grep browser_download_url \
         | grep Proton \
@@ -48,8 +48,8 @@ DOWNLOAD_URL=$(curl -s https://api.github.com/repos/GloriousEggroll/proton-ge-cu
 DOWNLOAD_FILE=$(echo "$DOWNLOAD_URL" | rev | cut -d '/' -f1 | rev)
 DOWNLOAD_URL_CUT=$(echo "$DOWNLOAD_URL" | rev | cut -d '/' -f2- | rev)
 DOWNLOAD_URL="$DOWNLOAD_URL_CUT/{$DOWNLOAD_FILE}"
-mkdir "${HOME}/.steam/root/compatibilitytools.d"
-cd "${HOME}/.steam/root/compatibilitytools.d"
+mkdir "~/.steam/root/compatibilitytools.d"
+cd "~/.steam/root/compatibilitytools.d"
 curl -s -L "$DOWNLOAD_URL" -o '#1'
 tar -xf $DOWNLOAD_FILE
 
