@@ -19,15 +19,9 @@ echo -ne "
     bash startup.sh
     source $SCRIPT_DIR/setup.conf
     bash 0-preinstall.sh
-<<<<<<< HEAD
-    arch-chroot /mnt $SCRIPT_DIR/1-setup.sh
-    arch-chroot /mnt /usr/bin/runuser -u $USERNAME -- /home/$USERNAME/$USER_DIR/2-user.sh
-    arch-chroot /mnt $SCRIPT_DIR/3-post-setup.sh
-=======
     arch-chroot /mnt /root/ArchTitus/1-setup.sh
     arch-chroot /mnt /usr/bin/runuser -u $USERNAME -- /home/$USERNAME/ArchTitus/2-user.sh
     arch-chroot /mnt /root/ArchTitus/3-post-setup.sh
->>>>>>> parent of e5df606 (Fix script?)
 
 echo -ne "
 -------------------------------------------------------------------------
