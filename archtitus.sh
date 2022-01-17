@@ -3,7 +3,7 @@
 # Find the name of the folder the scripts are in
 setfont ter-v22b
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-echo "$SCRIPT_DIR"
+USER_DIR=$(echo "$SCRIPT_DIR" | cut -d '/' -f2)
 read -p "enter"
 echo -ne "
 -------------------------------------------------------------------------
@@ -21,9 +21,9 @@ echo -ne "
     bash startup.sh
     source $SCRIPT_DIR/setup.conf
     bash 0-preinstall.sh
-    arch-chroot /mnt /root/$SCRIPT_DIR/1-setup.sh
-    arch-chroot /mnt /usr/bin/runuser -u $USERNAME -- /home/$USERNAME/$SCRIPT_DIR/2-user.sh
-    arch-chroot /mnt /root/$SCRIPT_DIR/3-post-setup.sh
+    arch-chroot /mnt $SCRIPT_DIR/1-setup.sh
+    arch-chroot /mnt /usr/bin/runuser -u $USERNAME -- /home/$USERNAME/$USER_DIR/2-user.sh
+    arch-chroot /mnt $SCRIPT_DIR/3-post-setup.sh
 
 echo -ne "
 -------------------------------------------------------------------------
