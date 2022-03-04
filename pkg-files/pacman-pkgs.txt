@@ -49,6 +49,7 @@ curl
 deja-dup
 deluge 
 dialog
+discord
 discover
 dmidecode
 dnsmasq
