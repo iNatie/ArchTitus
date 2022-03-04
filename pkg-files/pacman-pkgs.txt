@@ -141,6 +141,7 @@ powerline-fonts
 print-manager
 pulseaudio
 pulseaudio-alsa
+pulseaudio-equalizer-ladspa
 pulseaudio-bluetooth
 python-notify2
 python-psutil

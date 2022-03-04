@@ -102,6 +102,8 @@ systemctl enable NetworkManager.service
 echo "  NetworkManager enabled"
 systemctl enable bluetooth
 echo "  Bluetooth enabled"
+systemctl enable plexmediaserver.service
+echo "  Plex Media Server enabled"
 
 if [[ "${FS}" == "luks" || "${FS}" == "btrfs" ]]; then
 echo -ne "
