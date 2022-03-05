@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../Ultimaker/cura/Cura/.idea/Cura.iml" filepath="$PROJECT_DIR$/../../Ultimaker/cura/Cura/.idea/Cura.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ThingiBrowser.iml" filepath="$PROJECT_DIR$/.idea/ThingiBrowser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../Ultimaker/cura/Uranium/.idea/Uranium.iml" filepath="$PROJECT_DIR$/../../Ultimaker/cura/Uranium/.idea/Uranium.iml" />
+    </modules>
+  </component>
+</project>

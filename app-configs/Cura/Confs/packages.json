@@ -1,0 +1,74 @@
+{
+    "dismissed": [],
+    "installed": {
+        "ArcWelderPlugin": {
+            "filename": "C:\\Users\\natep\\AppData\\Local\\cura\\4.8\\cache\\cura_packages\\ArcWelderPlugin.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "fieldofview",
+                    "display_name": "fieldOfView",
+                    "email": "aldo@fieldofview.com",
+                    "website": "http://fieldofview.com"
+                },
+                "description": "Converts multiple subsequent G0/G1 moves to G2/G3 arcs. This reduces the number of gcode commands necessary to make curved movements, thus potentially removing stutter caused by buffer under-runs in the 3d printer controller.\n\nThis plugin uses ArcWelder by @FormerLurker: https://github.com/FormerLurker/ArcWelderLib\n\nThe plugin adds several settings to the \"Special Modes\" category in Cura. The \"Arc Welder\" setting needs to be checked to enable ArcWelder processing. See the plugin website for a more thorough description of the settings.\n\nThe development of this plugin can be sponsored via Github Sponsors (https://github.com/sponsors/fieldofview) or Paypal (https://www.paypal.me/fieldofview)",
+                "display_name": "Arc Welder",
+                "is_active": false,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "ArcWelderPlugin",
+                "package_type": "plugin",
+                "package_version": "3.5.2",
+                "sdk_version": 7,
+                "sdk_version_semver": "7.0.0",
+                "website": "https://github.com/fieldOfView/Cura-ArcWelderPlugin"
+            }
+        },
+        "CustomSupportCylinder": {
+            "filename": "C:\\Users\\natep\\AppData\\Local\\cura\\4.8\\cache\\cura_packages\\CustomSupportCylinder.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "5axes",
+                    "display_name": "5axes",
+                    "email": "cuq@free.fr",
+                    "website": "https://github.com/5axes"
+                },
+                "description": "A Cura plugin  to add 6 types of custom supports :\n- Cylindrical\n- Tube\n- Cube\n- Abutment\n- Freeform ( Geometry can be defined by your own STL  file)\n           - Cross\n           - Section\n           - Pillar\n           - Bridge\n           - Arch Buttress  (Arc boutant)\n           - Custom\n- Customized ( Definition with two selected points )",
+                "display_name": "Cylindric Custom Support",
+                "is_active": false,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "CustomSupportCylinder",
+                "package_type": "plugin",
+                "package_version": "2.5.5",
+                "sdk_version": 7,
+                "sdk_version_semver": "7.4.0",
+                "website": "https://github.com/5axes/CustomSupportCylinder"
+            }
+        },
+        "CustomSupports": {
+            "filename": "C:\\Users\\natep\\AppData\\Local\\cura\\4.8\\cache\\cura_packages\\CustomSupports.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "lokster",
+                    "display_name": "Krasimir Stefanov",
+                    "email": "lokiisyourmaster@gmail.com",
+                    "website": "http://lokspace.eu"
+                },
+                "description": "Cura plugin, which enables you to add custom supports!",
+                "display_name": "Custom Supports",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "CustomSupports",
+                "package_type": "plugin",
+                "package_version": "0.1.0",
+                "sdk_version": 7,
+                "sdk_version_semver": "7.2.0",
+                "website": "http://lokspace.eu/cura-custom-supports-plugin/"
+            }
+        }
+    },
+    "to_install": {},
+    "to_remove": [],
+    "version": 1
+}
